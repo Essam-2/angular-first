@@ -14,6 +14,12 @@
   padding-left: 10px;
   padding-right: 10px;
   border: #efefef 2px solid;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.ekart--product--item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
 }
 
 .ekart-wishlist-sale-container {
