@@ -25,6 +25,16 @@
       color: product.is_in_inventory ? 'green' : 'red'
     }"
   >
+    <i
+      *ngIf="product.is_in_inventory"
+      class="fa fa-check-circle-o"
+      aria-hidden="true"
+    ></i>
+    <i
+      *ngIf="!product.is_in_inventory"
+      class="fa fa-times-circle"
+      aria-hidden="true"
+    ></i>
     {{
       product.is_in_inventory ? "Available in stock" : "Not available in stock"
     }}
