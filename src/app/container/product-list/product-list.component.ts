@@ -2,6 +2,7 @@ import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ProductComponent } from './product/product.component';
 import { FilterComponent } from './filter/filter.component';
+import { Product } from '../../Models/Product';
 
 @Component({
   selector: 'product-list',
@@ -11,6 +12,8 @@ import { FilterComponent } from './filter/filter.component';
   styleUrl: './product-list.component.css',
 })
 export class ProductListComponent {
+  selectedProduct: Product;
+
   products = [
     {
       id: 1,
@@ -20,7 +23,7 @@ export class ProductListComponent {
       brand: 'NIKE',
       gender: 'MEN',
       category: 'RUNNING',
-      size: [6, 7, 8, 9, 10],
+      size: [6, 7, 8, 9, 90],
       color: ['White', 'Blue', 'Black'],
       price: 160,
       discountPrice: 140,

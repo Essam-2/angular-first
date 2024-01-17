@@ -12,6 +12,7 @@
       " -->
     <app-product
       [product]="product"
+      (click)="selectedProduct = product"
       *ngIf="
         searchText === '' ||
         product.name.toLocaleLowerCase().includes(searchText)
