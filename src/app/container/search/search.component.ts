@@ -1,5 +1,11 @@
 import { NgClass, NgIf } from '@angular/common';
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  EventEmitter,
+  Output,
+  ViewChild,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -16,11 +22,14 @@ export class SearchComponent {
   @Output()
   searchTextChange: EventEmitter<string> = new EventEmitter<string>();
 
-  onSearchTextChange(event: any) {
-    this.searchTextChange.emit(this.searchText);
-  }
+  @ViewChild('searchInput') searchInputEl: ElementRef;
 
-  updateSearchText(event: any) {
-    this.searchText = event.target.value;
+  // onSearchTextChange(event: any) {
+  //   this.searchTextChange.emit(this.searchText);
+  // }
+
+  updateSearchText() {
+    this.searchText = this.searchInputEl.nativeElement.value;
+    this.searchTextChange.emit(this.searchText);
   }
 }
